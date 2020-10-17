@@ -27,6 +27,7 @@ namespace Rosseti
     {
         List<Employer> employers;
         List<Places> places;
+        List<Task> tasks;
         public MainPage()
         {
 
@@ -54,7 +55,23 @@ namespace Rosseti
             {
                 PlaceWorkChoose.Items.Add($"{ place.name}");
             }
+            tasks = await firebase.Child("inspection_tasks")
+                .OrderByKey()
+                .OnceSingleAsync<List<Task>>();
+            showTasks();
+        }
 
+        public void showTasks()
+        {
+            foreach (ItemCollection item in OldTasks.Items) OldTasks.Items.Remove(item);
+
+            foreach (var task in tasks)
+            {
+                if (($"{ task.creator.middle_name} { task.creator.first_name} { task.creator.last_name}")== MasterEmployer.Text)
+                {
+                    OldTasks.Items.Add($"{ task.place.name}");
+                }
+            }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -66,7 +83,7 @@ namespace Rosseti
         {
             if ((PlaceWorkChoose.Text.Length>2)&& (Task.Text.Length > 10 )&& (EmployerChoose.Text.Length > 2) && (MasterEmployer.Text.Length > 2))
             {
-                debuger.Text = PlaceWorkChoose.Text.Length+" "+Task.Text.Length+ " " +EmployerChoose.Text.Length+" " +MasterEmployer.Text.Length;
+                
                 AddNewRecord();
             }
         }
@@ -121,6 +138,19 @@ namespace Rosseti
         private void TextBlock_SelectionChanged(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void MasterEmployer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            showTasks();
+        }
+
+        private void OldTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int taskId=0;
+            
+            string adress = "https://realityleap-rosseti.web.app?type=task&task_id=" + taskId.ToString() + "&result_id=3";
+            Report.NavigateUri= new Uri(adress);
         }
     }
 }

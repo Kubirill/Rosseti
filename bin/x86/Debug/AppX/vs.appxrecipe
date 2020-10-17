@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-10-17T08:16:19.222</Modified>
+      <Modified>2020-10-17T09:48:41.685</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Rosseti.exe">
       <PackagePath>entrypoint\Rosseti.exe</PackagePath>
-      <Modified>2020-10-17T08:16:18.529</Modified>
+      <Modified>2020-10-17T09:48:41.018</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\.nuget\packages\firebasedatabase.net\4.0.4\lib\netstandard2.0\Firebase.dll">
       <PackagePath>Firebase.dll</PackagePath>
@@ -102,35 +102,35 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Rosseti.xr.xml">
       <PackagePath>Rosseti.xr.xml</PackagePath>
-      <Modified>2020-10-17T08:12:37.352</Modified>
+      <Modified>2020-10-17T09:48:40.792</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.801</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\BlankPage1.xbf">
       <PackagePath>BlankPage1.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\BlankPage2.xbf">
       <PackagePath>BlankPage2.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\ContentDialog1.xbf">
       <PackagePath>ContentDialog1.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\ContentDialog2.xbf">
       <PackagePath>ContentDialog2.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\MyUserControl1.xbf">
       <PackagePath>MyUserControl1.xbf</PackagePath>
-      <Modified>2020-10-17T08:16:18.359</Modified>
+      <Modified>2020-10-17T09:48:40.802</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -138,11 +138,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-10-17T03:17:48.130</Modified>
+      <Modified>2020-10-17T09:28:30.323</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Core\Rosseti.exe">
       <PackagePath>Rosseti.exe</PackagePath>
-      <Modified>2020-10-17T08:16:19.217</Modified>
+      <Modified>2020-10-17T09:48:41.682</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
