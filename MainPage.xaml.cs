@@ -37,7 +37,7 @@ namespace Rosseti
         }
         public async void DBload()
         {
-            var firebase = new FirebaseClient("https://test-8265d.firebaseio.com/");
+            var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
             employers = await firebase.Child("employees")
                 .OrderByKey()
                 .OnceSingleAsync<List<Employer>>();
@@ -118,7 +118,7 @@ namespace Rosseti
                 }
             }
             Task newTask = new Task { creator = NewMaster, executor = NewEmployers, id = 5, place = newPlace, safety_event = Task.Text };
-            var firebase = new FirebaseClient("https://test-8265d.firebaseio.com/");
+            var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
             var bd = firebase.Child("inspection_tasks");
             var tasksArray = await firebase.Child("inspection_tasks")
                 .OrderByKey()
