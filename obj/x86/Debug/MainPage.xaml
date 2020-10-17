@@ -10,26 +10,32 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Width="1280" Height="720">
-        <Rectangle HorizontalAlignment="Left" Height="507" Margin="540,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
-        <ComboBox x:ConnectionId='2' x:Name="MasterEmployer" Margin="0,47,51,0" HorizontalAlignment="Right" Width="226" Height="30" IsEditable="True"                                                    >
-
-        </ComboBox>
-        <Button x:ConnectionId='3' Content="Новое задание" Margin="1002,159,0,0" VerticalAlignment="Top" Height="59" Width="226" FontSize="18" FontWeight="Bold"                     />
-        <Grid Width="401" Margin="75,62,804,151" FocusVisualPrimaryBrush="#FF140505">
+        <Rectangle HorizontalAlignment="Left" Height="507" Margin="443,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
+        <Grid Width="401" Margin="17,118,862,95" FocusVisualPrimaryBrush="#FF140505">
             <Rectangle HorizontalAlignment="Center" Height="507" Stroke="Black" VerticalAlignment="Center" Width="400"/>
-            <ComboBox x:ConnectionId='7' x:Name="EmployerChoose" Margin="0,367,0,0" Width="349" HorizontalAlignment="Center" Height="41" IsEditable="True"/>
-            <TextBox x:ConnectionId='8' x:Name="Task" Margin="25,190,27,0" Text="" TextWrapping="Wrap" Height="133" VerticalAlignment="Top"                               />
-            <Button x:ConnectionId='9' x:Name="AddTask" Content="Добавить" Margin="0,0,26,29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="154"                       RenderTransformOrigin="0.5,0.505"/>
-            <ComboBox x:ConnectionId='10' x:Name="PlaceWorkChoose" Margin="0,99,0,0" Width="349" HorizontalAlignment="Center" Height="41" IsEditable="True"/>
+            <ComboBox x:ConnectionId='12' x:Name="EmployerChoose" Margin="0,367,0,0" Width="349" HorizontalAlignment="Center" Height="41" IsEditable="True"/>
+            <TextBox x:ConnectionId='13' x:Name="Task" Margin="25,190,27,0" Text="" TextWrapping="Wrap" Height="133" VerticalAlignment="Top"                               />
+            <Button x:ConnectionId='14' x:Name="AddTask" Content="Добавить" Margin="0,0,26,29" VerticalAlignment="Bottom" HorizontalAlignment="Right" Height="41" Width="154"                       RenderTransformOrigin="0.5,0.505"/>
+            <ComboBox x:ConnectionId='15' x:Name="PlaceWorkChoose" Margin="0,99,0,0" Width="349" HorizontalAlignment="Center" Height="41" IsEditable="True"/>
             <TextBlock HorizontalAlignment="Left" Margin="26,343,0,0" Text="Электромантёр" TextWrapping="Wrap" VerticalAlignment="Top" Width="110" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Margin="26,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="18" FontWeight="Bold"><Run Text="Технические мероприятия"/><LineBreak/><Run/></TextBlock>
             <TextBlock HorizontalAlignment="Left" Margin="26,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="18" FontWeight="Bold"><Run Text="Место и наименование работ"/><LineBreak/><Run/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
-            <TextBlock x:ConnectionId='11' HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold"                                               Text="Новое задание&#xD;&#xA;" FontSize="24"/>
+            <TextBlock x:ConnectionId='16' HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold"                                               Text="Новое задание&#xD;&#xA;" FontSize="24"/>
 
         </Grid>
-        <TextBlock x:ConnectionId='4' HorizontalAlignment="Left" Margin="564,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold"                                               Text="Хранилище заданий&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
-        <ComboBox x:ConnectionId='5' x:Name="OldTasks" Margin="564,159,0,0" Width="349" Height="41"                                             />
-        <HyperlinkButton x:ConnectionId='6' x:Name="Report" Content="HyperlinkButton" Margin="761,502,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB"/>
+        <TextBlock x:ConnectionId='2' HorizontalAlignment="Left" Margin="468,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold"                                               Text="Хранилище заданий&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
+        <ComboBox x:ConnectionId='3' x:Name="OldTasks" Margin="467,216,0,0" Width="349" Height="41"                                             />
+        <HyperlinkButton x:ConnectionId='4' x:Name="Report" Content="Отчёт" Margin="664,559,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB"/>
+        <TextBlock x:ConnectionId='5' x:Name="MasterEmployer" HorizontalAlignment="Left" Margin="1002,33,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Height="83" FontSize="20" TextAlignment="Right"/>
+        <Rectangle HorizontalAlignment="Left" Height="507" Margin="870,118,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
+        <TextBlock x:ConnectionId='6' HorizontalAlignment="Left" Margin="898,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold"                                               Text="Отчёты о деффектах&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
+        <ComboBox x:ConnectionId='7' x:Name="Damage" Margin="898,211,0,0" Width="349" Height="41" >
+           
+        </ComboBox>
+        <HyperlinkButton x:ConnectionId='8' x:Name="Report_Copy" Content="Просмотр отчёта" Margin="1095,559,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB"                          />
+        <Button x:ConnectionId='9' x:Name="ChekBug" Content="Подтвердить дефект" Margin="1095,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <Button x:ConnectionId='10' x:Name="DeleteBug" Content="Удалить дефект" Margin="898,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <TextBlock x:ConnectionId='11' x:Name="debuger" HorizontalAlignment="Left" Margin="468,17,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="202"/>
     </Grid>
 </Page>
 

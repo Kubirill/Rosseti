@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Firebase.Database;
+using Firebase.Database.Query;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,35 @@ namespace Rosseti
     /// </summary>
     public sealed partial class BlankPage1 : Page
     {
+        List<Employer> employers;
         public BlankPage1()
         {
             this.InitializeComponent();
+            DBload();
+        }
+        public async void DBload()
+        {
+            var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
+            employers = await firebase.Child("employees")
+                .OrderByKey()
+                .OnceSingleAsync<List<Employer>>();
+
+            foreach (var empl in employers)
+            {
+                
+                if (empl.role == "мастер") Master.Items.Add($"{ empl.first_name} { empl.middle_name} { empl.last_name}");
+            }
+            
+        }
+
+        private void logining_Click(object sender, RoutedEventArgs e)
+        {
+            if (Master.Text.Length>2&&password.Text.Length>2)  this.Frame.Navigate(typeof(MainPage),Master.Text);
+        }
+
+        private void MasterEmployer_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

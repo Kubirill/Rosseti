@@ -23,11 +23,15 @@ namespace Rosseti
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
+    /// 
+
+    
     public sealed partial class MainPage : Page
     {
         List<Employer> employers;
         List<Places> places;
         List<Task> tasks;
+        List<Damage> damages;
         public MainPage()
         {
 
@@ -35,17 +39,25 @@ namespace Rosseti
             this.InitializeComponent();
             DBload();
         }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter is string && !string.IsNullOrWhiteSpace((string)e.Parameter))
+            {
+                MasterEmployer.Text = e.Parameter.ToString();
+            }
+            base.OnNavigatedTo(e);
+        }
         public async void DBload()
         {
             var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
             employers = await firebase.Child("employees")
                 .OrderByKey()
                 .OnceSingleAsync<List<Employer>>();
-
+            
             foreach (var empl in employers)
             {
                 if (empl.role== "электромонтер") EmployerChoose.Items.Add($"{ empl.middle_name} { empl.first_name} { empl.last_name}");
-                if (empl.role == "мастер") MasterEmployer.Items.Add($"{ empl.middle_name} { empl.first_name} { empl.last_name}");
+                //if (empl.role == "мастер") MasterEmployer.Items.Add($"{ empl.middle_name} { empl.first_name} { empl.last_name}");
             }
             places = await firebase.Child("places")
                 .OrderByKey()
@@ -59,6 +71,23 @@ namespace Rosseti
                 .OrderByKey()
                 .OnceSingleAsync<List<Task>>();
             showTasks();
+
+            damages = await firebase.Child("inspection_results")
+                .OrderByKey()
+                .OnceSingleAsync<List<Damage>>();
+            showDamage();
+        }
+
+        public void showDamage()
+        {
+            foreach (var dam in damages)
+            {
+                 if (($"{ dam.inspection_task.creator.first_name} { dam.inspection_task.creator.middle_name} { dam.inspection_task.creator.last_name}") == MasterEmployer.Text&&dam.approve_time==0)
+                {
+                    debuger.Text=($"{ dam.inspection_task.place.name}");
+                    Damage.Items.Add($"{ dam.inspection_task.place.name}");
+                }
+            }
         }
 
         public void showTasks()
@@ -67,7 +96,7 @@ namespace Rosseti
 
             foreach (var task in tasks)
             {
-                if (($"{ task.creator.middle_name} { task.creator.first_name} { task.creator.last_name}")== MasterEmployer.Text)
+                if (($"{ task.creator.first_name} { task.creator.middle_name} { task.creator.last_name}")== MasterEmployer.Text)
                 {
                     OldTasks.Items.Add($"{ task.place.name}");
                 }
@@ -117,17 +146,19 @@ namespace Rosseti
                     break;
                 }
             }
-            Task newTask = new Task { creator = NewMaster, executor = NewEmployers, id = 5, place = newPlace, safety_event = Task.Text };
+            Task newTask = new Task { creator = NewMaster, executor = NewEmployers,  place = newPlace, safety_event = Task.Text };
             var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
             var bd = firebase.Child("inspection_tasks");
             var tasksArray = await firebase.Child("inspection_tasks")
                 .OrderByKey()
                 .OnceSingleAsync<List<Task>>();
-            newTask.id = tasksArray.Count;
+            newTask.id = tasksArray.Count.ToString();
             tasksArray.Add(newTask);
 
             await bd.PutAsync(tasksArray);
-
+            PlaceWorkChoose.Text = "";
+            EmployerChoose.Text = "";
+            Task.Text = "";
         }
 
         private void Task_TextChanged(object sender, TextChangedEventArgs e)
@@ -147,10 +178,31 @@ namespace Rosseti
 
         private void OldTasks_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            int taskId=0;
+            string taskId = "0";
+            foreach (var task in tasks)
+            {
+                if (task.place.name == OldTasks.Text) taskId = task.id;
+            }
             
-            string adress = "https://realityleap-rosseti.web.app?type=task&task_id=" + taskId.ToString() + "&result_id=3";
+            
+            string adress = "https://realityleap-rosseti.web.app?type=task&task_id=" + taskId + "&result_id=3";
             Report.NavigateUri= new Uri(adress);
+        }
+
+        private void Report_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string taskId = "0";
+            string damId = "0";
+            foreach (var dam in damages)
+            {
+                if (dam.inspection_task.place.name == Damage.Text)
+                {
+                    taskId = dam.inspection_task.id;
+                    damId = dam.id;
+                }
+            }
+            string adress = "https://realityleap-rosseti.web.app?type=result"  + "&result_id=" + damId;
+            Report_Copy.NavigateUri = new Uri(adress);
         }
     }
 }

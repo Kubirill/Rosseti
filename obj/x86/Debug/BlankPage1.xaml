@@ -9,6 +9,9 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <ComboBox x:ConnectionId='2' x:Name="Master" Margin="0,420,0,0" HorizontalAlignment="Center" Width="530" Height="55" IsEditable="True"                                                    FontSize="20" />
+        <TextBox x:ConnectionId='3' x:Name="password" HorizontalAlignment="Center" Margin="0,541,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="530" Height="50" TextAlignment="Center" FontSize="36" FontFamily="Arial Black" PlaceholderText="введите пароль"/>
+        <Button x:ConnectionId='4' x:Name="logining" Content="Войти" Margin="0,648,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" Width="236"                       />
 
     </Grid>
 </Page>

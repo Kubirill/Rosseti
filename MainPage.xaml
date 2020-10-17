@@ -10,12 +10,8 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Width="1280" Height="720">
-        <Rectangle HorizontalAlignment="Left" Height="507" Margin="540,62,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
-        <ComboBox x:Name="MasterEmployer" Margin="0,47,51,0" HorizontalAlignment="Right" Width="226" Height="30" IsEditable="True" SelectionChanged="MasterEmployer_SelectionChanged" >
-
-        </ComboBox>
-        <Button Content="Новое задание" Margin="1002,159,0,0" VerticalAlignment="Top" Height="59" Width="226" FontSize="18" FontWeight="Bold" Click="Button_Click"/>
-        <Grid Width="401" Margin="75,62,804,151" FocusVisualPrimaryBrush="#FF140505">
+        <Rectangle HorizontalAlignment="Left" Height="507" Margin="443,119,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
+        <Grid Width="401" Margin="17,118,862,95" FocusVisualPrimaryBrush="#FF140505">
             <Rectangle HorizontalAlignment="Center" Height="507" Stroke="Black" VerticalAlignment="Center" Width="400"/>
             <ComboBox x:Name="EmployerChoose" Margin="0,367,0,0" Width="349" HorizontalAlignment="Center" Height="41" IsEditable="True"/>
             <TextBox x:Name="Task" Margin="25,190,27,0" Text="" TextWrapping="Wrap" Height="133" VerticalAlignment="Top" TextChanged="Task_TextChanged"/>
@@ -27,8 +23,18 @@
             <TextBlock HorizontalAlignment="Left" Margin="24,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold" SelectionChanged="TextBlock_SelectionChanged" Text="Новое задание&#xD;&#xA;" FontSize="24"/>
 
         </Grid>
-        <TextBlock HorizontalAlignment="Left" Margin="564,73,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold" SelectionChanged="TextBlock_SelectionChanged" Text="Хранилище заданий&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
-        <ComboBox x:Name="OldTasks" Margin="564,159,0,0" Width="349" Height="41" SelectionChanged="OldTasks_SelectionChanged"/>
-        <HyperlinkButton x:Name="Report" Content="HyperlinkButton" Margin="761,502,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB"/>
+        <TextBlock HorizontalAlignment="Left" Margin="468,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold" SelectionChanged="TextBlock_SelectionChanged" Text="Хранилище заданий&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
+        <ComboBox x:Name="OldTasks" Margin="467,216,0,0" Width="349" Height="41" SelectionChanged="OldTasks_SelectionChanged"/>
+        <HyperlinkButton x:Name="Report" Content="Отчёт" Margin="664,559,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB"/>
+        <TextBlock x:Name="MasterEmployer" HorizontalAlignment="Left" Margin="1002,33,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Width="227" Height="83" FontSize="20" TextAlignment="Right"/>
+        <Rectangle HorizontalAlignment="Left" Height="507" Margin="870,118,0,0" Stroke="Black" VerticalAlignment="Top" Width="400"/>
+        <TextBlock HorizontalAlignment="Left" Margin="898,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310" Height="39" FontWeight="Bold" SelectionChanged="TextBlock_SelectionChanged" Text="Отчёты о деффектах&#xA;" FontSize="24" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False"/>
+        <ComboBox x:Name="Damage" Margin="898,211,0,0" Width="349" Height="41" >
+           
+        </ComboBox>
+        <HyperlinkButton x:Name="Report_Copy" Content="Просмотр отчёта" Margin="1095,559,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB" Click="Report_Copy_Click"/>
+        <Button x:Name="ChekBug" Content="Подтвердить дефект" Margin="1095,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <Button x:Name="DeleteBug" Content="Удалить дефект" Margin="898,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
+        <TextBlock x:Name="debuger" HorizontalAlignment="Left" Margin="468,17,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="202"/>
     </Grid>
 </Page>
