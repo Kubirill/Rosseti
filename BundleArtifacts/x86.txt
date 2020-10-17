@@ -1,0 +1,2 @@
+MainPackage=D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Rosseti_1.0.0.0_x86_Debug.msix
+SymbolPackage=D:\Hak\Rosseti\Rosseti\obj\x86\Debug\Symbols\Rosseti_1.0.0.0_x86_Debug.appxsym

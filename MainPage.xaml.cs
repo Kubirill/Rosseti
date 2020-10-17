@@ -84,7 +84,7 @@ namespace Rosseti
             {
                  if (($"{ dam.inspection_task.creator.first_name} { dam.inspection_task.creator.middle_name} { dam.inspection_task.creator.last_name}") == MasterEmployer.Text&&dam.approve_time==0)
                 {
-                    debuger.Text=($"{ dam.inspection_task.place.name}");
+                    //debuger.Text=($"{ dam.inspection_task.place.name}");
                     Damage.Items.Add($"{ dam.inspection_task.place.name}");
                 }
             }

@@ -35,6 +35,5 @@
         <HyperlinkButton x:Name="Report_Copy" Content="Просмотр отчёта" Margin="1095,559,0,0" VerticalAlignment="Top" Background="#FFCCCCCC" BorderBrush="#FF020101" Height="38" Width="152" NavigateUri="https://docs.microsoft.com/ru-ru/windows/uwp/design/controls-and-patterns/buttons" FocusVisualSecondaryBrush="#FFABABAB" Click="Report_Copy_Click"/>
         <Button x:Name="ChekBug" Content="Подтвердить дефект" Margin="1095,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
         <Button x:Name="DeleteBug" Content="Удалить дефект" Margin="898,275,0,0" VerticalAlignment="Top" Height="41" Width="147"/>
-        <TextBlock x:Name="debuger" HorizontalAlignment="Left" Margin="468,17,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Height="45" Width="202"/>
     </Grid>
 </Page>
