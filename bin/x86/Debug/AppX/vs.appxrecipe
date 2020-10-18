@@ -30,13 +30,13 @@
     <AppXManifest Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-10-18T02:24:28.790</Modified>
+      <Modified>2020-10-18T02:30:15.487</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Rosseti.exe">
       <PackagePath>entrypoint\Rosseti.exe</PackagePath>
-      <Modified>2020-10-18T02:24:28.140</Modified>
+      <Modified>2020-10-18T02:30:14.734</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Student\.nuget\packages\firebasedatabase.net\4.0.4\lib\netstandard2.0\Firebase.dll">
       <PackagePath>Firebase.dll</PackagePath>
@@ -142,7 +142,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Core\Rosseti.exe">
       <PackagePath>Rosseti.exe</PackagePath>
-      <Modified>2020-10-18T02:24:28.786</Modified>
+      <Modified>2020-10-18T02:30:15.483</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
