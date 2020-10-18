@@ -79,3 +79,5 @@ D:\Hak\Rosseti\Rosseti\obj\x64\Debug\resources.en-us.resfiles
 D:\Hak\Rosseti\Rosseti\obj\x64\Debug\resources.en-us.resfiles.intermediate
 D:\Hak\Rosseti\Rosseti\obj\x64\Debug\ProjectArchitectures.txt
 D:\Hak\Rosseti\Rosseti\obj\x64\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885202160000000.json
+D:\Hak\Rosseti\Rosseti\bin\x64\Debug\Core\ForBundle\AppxManifest.xml
+D:\Hak\Rosseti\Rosseti\obj\x64\Debug\Rosseti.csprojAssemblyReference.cache

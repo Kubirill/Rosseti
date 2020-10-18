@@ -9,7 +9,7 @@
   <Identity
     Name="5fbe5431-68a9-4e10-b7ca-fa70369fef70"
     Publisher="CN=Student"
-    Version="1.0.0.0" />
+    Version="1.1.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="5fbe5431-68a9-4e10-b7ca-fa70369fef70" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
