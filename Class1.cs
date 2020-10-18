@@ -47,14 +47,48 @@ namespace Rosseti
         public Task inspection_task { get; set; }
         public string id { get; set; }
 
-        public long approve_time { get; set; } 
         public long start_time { get; set; } 
         public long finish_time { get; set; } 
+
+        public List<Defect> defects { get; set; }
+
+        
+}
+    public class OutDamage:Damage
+    {
+        [JsonProperty("Timestamp")]
+        public ServerTimeStamp approve_time { get; } = new ServerTimeStamp();
+    }
+    public class inputDamage:Damage
+    {
+        public long approve_time { get; set; }
+
+        
+        
     }
 
     public class ServerTimeStamp
     {
         [JsonProperty(".sv")]
         public string TimestampPlaceholder { get; } = "timestamp";
+    }
+
+    public class Defect
+    {
+        public int critical_score { get; set; }
+        public long elimination_time { get; set; }
+
+        public string equipment_type { get; set; }
+        public string id { get; set; }
+        public string location { get; set; }
+
+        public string check { get; set; }
+        public Description description { get; set; }
+    }
+
+        public class Description
+        {
+            public List<string> photo_urls { get; set; }
+            public string text { get; set; }
     }
 }

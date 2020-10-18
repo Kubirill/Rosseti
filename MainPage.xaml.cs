@@ -31,7 +31,7 @@ namespace Rosseti
         List<Employer> employers;
         List<Places> places;
         List<Task> tasks;
-        List<Damage> damages;
+        List<inputDamage> damages;
         public MainPage()
         {
 
@@ -49,7 +49,7 @@ namespace Rosseti
         }
         public async void DBload()
         {
-            var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
+            var firebase = new FirebaseClient("https://test-8265d.firebaseio.com/");
             employers = await firebase.Child("employees")
                 .OrderByKey()
                 .OnceSingleAsync<List<Employer>>();
@@ -74,7 +74,7 @@ namespace Rosseti
 
             damages = await firebase.Child("inspection_results")
                 .OrderByKey()
-                .OnceSingleAsync<List<Damage>>();
+                .OnceSingleAsync<List<inputDamage>>();
             showDamage();
         }
 
@@ -86,6 +86,7 @@ namespace Rosseti
                 {
                     //debuger.Text=($"{ dam.inspection_task.place.name}");
                     Damage.Items.Add($"{ dam.inspection_task.place.name}");
+                    
                 }
             }
         }
@@ -147,7 +148,7 @@ namespace Rosseti
                 }
             }
             Task newTask = new Task { creator = NewMaster, executor = NewEmployers,  place = newPlace, safety_event = Task.Text };
-            var firebase = new FirebaseClient("https://realityleap-rosseti.firebaseio.com/");
+            var firebase = new FirebaseClient("https://test-8265d.firebaseio.com/");
             var bd = firebase.Child("inspection_tasks");
             var tasksArray = await firebase.Child("inspection_tasks")
                 .OrderByKey()
@@ -199,10 +200,100 @@ namespace Rosseti
                 {
                     taskId = dam.inspection_task.id;
                     damId = dam.id;
+                    break;
                 }
             }
             string adress = "https://realityleap-rosseti.web.app?type=result"  + "&result_id=" + damId;
             Report_Copy.NavigateUri = new Uri(adress);
+        }
+
+
+        public async void loadDamage()
+        {
+            var firebase = new FirebaseClient("https://test-8265d.firebaseio.com/");
+            var bd = firebase.Child("inspection_results");
+            await bd.PutAsync(damages);
+        }
+        private void ChekBug_Click(object sender, RoutedEventArgs e)
+        {
+            //debuger.Text = Damage.Text;
+            if (Damage.Text.Length > 2)
+            {
+                foreach (var report in damages)
+                {
+                   // debuger.Text = Damage.Text+" "+ dam.inspection_task.place.name;
+                    if (report.inspection_task.place.name == Damage.Text)
+                    {
+                        foreach (var dam in report.defects)
+                        {
+                            if (dam.location == DamageList.Text)
+                            {
+                                dam.check = "yes";
+                                DamageList.Items.Remove(dam.location);
+                                if (DamageList.Items.Count <= 0) {
+                                    int dateUtc = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+                                    report.approve_time = dateUtc;
+                                    loadDamage();
+                                }
+                            }
+                        }
+
+                    }
+                }
+                loadDamage();
+
+            }
+        }
+
+        private void Damage_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DamageList.Items.Clear();
+            foreach (var report in damages)
+            {
+                
+                if (report.inspection_task.place.name == Damage.Text)
+                {
+                    foreach (var dam in report.defects)
+                    {
+                        if (dam.check!="yes") DamageList.Items.Add(dam.location);
+                    }
+                    break;
+                }
+            }
+        }
+
+        private void DeleteBug_Click(object sender, RoutedEventArgs e)
+        {
+            if (Damage.Text.Length > 2)
+            {
+                foreach (var report in damages)
+                {
+                    // debuger.Text = Damage.Text+" "+ dam.inspection_task.place.name;
+                    if (report.inspection_task.place.name == Damage.Text)
+                    {
+                        foreach (var dam in report.defects)
+                        {
+                            if (dam.location == DamageList.Text)
+                            {
+                                DamageList.Items.Remove(dam.location);
+                                if (DamageList.Items.Count <= 0)
+                                {
+                                    int dateUtc = (int)(DateTime.UtcNow - new DateTime(1970, 1, 1)).TotalSeconds;
+                                    report.approve_time = dateUtc;
+                                    loadDamage();
+                                    
+                                }
+                                report.defects.Remove(dam);
+                                break;
+
+                            }
+                        }
+
+                    }
+                }
+                loadDamage();
+
+            }
         }
     }
 }

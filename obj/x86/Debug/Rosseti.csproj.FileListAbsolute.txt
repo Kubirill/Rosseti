@@ -80,3 +80,4 @@ D:\Hak\Rosseti\Rosseti\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Strin
 D:\Hak\Rosseti\Rosseti\obj\x86\Debug\System.Reactive\en-US\System.Reactive.Platforms.Windows.Strings_WindowsThreading.resw
 D:\Hak\Rosseti\Rosseti\obj\x86\Debug\resources.en-us.resfiles
 D:\Hak\Rosseti\Rosseti\obj\x86\Debug\resources.en-us.resfiles.intermediate
+D:\Hak\Rosseti\Rosseti\bin\x86\Debug\Core\ForBundle\AppxManifest.xml
